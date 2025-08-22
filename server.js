@@ -8,7 +8,11 @@ const app = express();
 // ✅ Enable CORS
 app.use(
   cors({
-    origin: ["http://localhost:5000"], // allowed origins
+    origin: [
+      "http://localhost:5000",
+      "http://localhost:3000",
+      "https://ezy-estimate.vercel.app/",
+    ], // allowed origins
     methods: ["GET", "POST", "PUT", "DELETE"], // allowed methods
     credentials: true, // allow cookies/auth headers if needed
   })
