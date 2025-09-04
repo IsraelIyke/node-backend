@@ -9,7 +9,7 @@ const googleLogin = async (req, res) => {
   try {
     const { token } = req.body; // token from frontend Google login
 
-    // verify token
+    // now we verify token
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
@@ -18,7 +18,7 @@ const googleLogin = async (req, res) => {
     const payload = ticket.getPayload();
     const { email, name } = payload;
 
-    // check if user exists
+    // this checks if user exists
     let user = await User.findOne({ email });
 
     if (!user) {
@@ -26,7 +26,7 @@ const googleLogin = async (req, res) => {
         name,
         email,
         provider: "google",
-        role: "user", // default role
+        role: "user", // Not really important; already defined in model
       });
     }
 
