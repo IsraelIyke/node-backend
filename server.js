@@ -5,17 +5,10 @@ const cors = require("cors");
 
 const app = express();
 
-<<<<<<< HEAD
-// ✅ CORS (restrict to your frontend domain)
-app.use(
-  cors({
-    origin: ["http://localhost:3000"], // change to your Next.js domain
-=======
 // Include CORS to restrict frontend access
 app.use(
   cors({
     origin: ["http://localhost:3000"], // This is my frontend. You can change it the url you want to allow access
->>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -24,11 +17,7 @@ app.use(
 // to parse JSON
 app.use(express.json());
 
-<<<<<<< HEAD
-// ✅ API Key Middleware (before routes)
-=======
 // API Key Middleware (Include if you want but not really necessary)
->>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 // app.use((req, res, next) => {
 //   const apiKey = req.headers["x-api-key"];
 //   if (apiKey !== process.env.API_KEY) {
@@ -37,11 +26,7 @@ app.use(express.json());
 //   next();
 // });
 
-<<<<<<< HEAD
-// Connect Database
-=======
 // This will connect the Mongo Database
->>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 connectDB();
 
 // My routes from "./routes/userRoutes"
