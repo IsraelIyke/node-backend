@@ -18,7 +18,11 @@ const generateToken = require("../utils/generateToken");
 // Example protected route
 router.get("/profile", auth, (req, res) => {
   res.json({
+<<<<<<< HEAD
     message: `Hello ${req.user.email}, role: ${req.user.role} this is your profile`,
+=======
+    message: `Hello ${req.user.email}, role: ${req.user.role} this is my profile`,
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
   });
 });
 
@@ -50,9 +54,14 @@ function generateCode() {
 router.post("/login", loginUser);
 router.post("/google-login", googleLogin);
 
+<<<<<<< HEAD
 /**
  * Register user
  */
+=======
+// Register user
+
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -88,9 +97,13 @@ router.post("/register", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 /**
  * Verify account
  */
+=======
+// Verify account
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 
 router.post("/verify-code", async (req, res) => {
   try {
@@ -132,9 +145,14 @@ router.post("/verify-code", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 /**
  * Resend verification code
  */
+=======
+// Resend verification code
+
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 router.post("/resend-code", async (req, res) => {
   try {
     const { email } = req.body;
@@ -161,9 +179,14 @@ router.post("/resend-code", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 /**
  * Forgot password request
  */
+=======
+// Forgot password request
+
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 router.post("/forgot-password", async (req, res) => {
   try {
     const { email } = req.body;
@@ -189,9 +212,14 @@ router.post("/forgot-password", async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 /**
  * Reset password
  */
+=======
+// Reset password
+
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
 router.post("/reset-password", async (req, res) => {
   try {
     const { email, code, newPassword } = req.body;

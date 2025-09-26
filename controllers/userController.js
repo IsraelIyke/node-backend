@@ -9,7 +9,11 @@ const googleLogin = async (req, res) => {
   try {
     const { token } = req.body; // token from frontend Google login
 
+<<<<<<< HEAD
     // verify token
+=======
+    // now we verify token
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
@@ -18,7 +22,11 @@ const googleLogin = async (req, res) => {
     const payload = ticket.getPayload();
     const { email, name } = payload;
 
+<<<<<<< HEAD
     // check if user exists
+=======
+    // this checks if user exists
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
     let user = await User.findOne({ email });
 
     if (!user) {
@@ -26,7 +34,11 @@ const googleLogin = async (req, res) => {
         name,
         email,
         provider: "google",
+<<<<<<< HEAD
         role: "user", // default role
+=======
+        role: "user", // Not really important; already defined in model
+>>>>>>> 1e89189f095a8895179521e79a061ba48a2fc9f1
       });
     }
 
