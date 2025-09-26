@@ -8,7 +8,7 @@ const app = express();
 // Include CORS to restrict frontend access
 app.use(
   cors({
-    origin: ["http://localhost:3000"], // This is my frontend. You can change it the url you want to allow access
+    origin: "*", // This is my frontend. You can change it the url you want to allow access
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
